@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+
+# AI Video Buddy - Video Companion Platform
+Sitemap: https://aivideobuddy.com/sitemap.xml
+
+# Performance optimization
+Crawl-delay: 1
+
+# Block sensitive areas
+Disallow: /admin/
+Disallow: /api/
+Disallow: /private/
+Disallow: /*.json$
+Disallow: /*.log$
