@@ -1,0 +1,73 @@
+# AI Video Buddy - aivideobuddy.com Production Configuration
+DirectoryIndex index.html index.php index.htm
+RewriteEngine On
+
+# Force HTTPS for secure video connections
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Remove www (force non-www)
+RewriteCond %{HTTP_HOST} ^www\.aivideobuddy\.com$ [NC]
+RewriteRule ^(.*)$ https://aivideobuddy.com/$1 [R=301,L]
+
+# Video-specific MIME types for video companion platform
+AddType video/mp4 .mp4
+AddType video/webm .webm
+AddType video/ogg .ogv
+AddType application/json .json
+
+# Performance compression for video platform
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/json
+    AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# Aggressive caching for video platform performance
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 6 months"
+    ExpiresByType image/png "access plus 6 months"
+    ExpiresByType image/jpg "access plus 6 months"
+    ExpiresByType image/jpeg "access plus 6 months"
+    ExpiresByType video/mp4 "access plus 1 month"
+    ExpiresByType video/webm "access plus 1 month"
+    ExpiresByType text/html "access plus 1 hour"
+</IfModule>
+
+# Security headers optimized for video companion platform
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options nosniff
+    Header always set X-Frame-Options SAMEORIGIN
+    Header always set X-XSS-Protection "1; mode=block"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    # Video chat and WebRTC friendly CSP
+    Header always set Content-Security-Policy "default-src 'self' 'unsafe-inline' *.google.com *.googletagmanager.com *.googleapis.com fonts.gstatic.com images.unsplash.com data: blob: wss: ws:; media-src 'self' blob: data:; connect-src 'self' wss: ws: https:; script-src 'self' 'unsafe-inline' *.google.com *.googletagmanager.com; style-src 'self' 'unsafe-inline' fonts.googleapis.com"
+    # Performance headers
+    Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
+</IfModule>
+
+# Custom error pages with dark theme
+ErrorDocument 404 /404.html
+ErrorDocument 500 /404.html
+
+# Block sensitive files
+<Files "*.md">
+    Order allow,deny
+    Deny from all
+</Files>
+
+<Files "deploy-*.sh">
+    Order allow,deny
+    Deny from all
+</Files>
+
+# Prevent direct access to sensitive areas
+RedirectMatch 403 ^/\.git.*$
+RedirectMatch 403 ^/\..*$
