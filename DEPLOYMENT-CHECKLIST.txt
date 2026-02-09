@@ -1,0 +1,47 @@
+🎥 AI VIDEO BUDDY - DEPLOYMENT CHECKLIST
+
+□ 1. LOGIN TO HOSTINGER
+   - Go to: hpanel.hostinger.com
+   - Login with your credentials
+
+□ 2. OPEN FILE MANAGER
+   - Click "File Manager" 
+   - Navigate to public_html/
+
+□ 3. DELETE DEFAULT FILES
+   - Select ALL existing files in public_html/
+   - Delete everything (clear the directory)
+
+□ 4. UPLOAD AI VIDEO BUDDY FILES
+   Location: /root/.openclaw/workspace/aivideobuddy/aivideobuddy-domain-package/
+   
+   Upload these files to public_html/:
+   □ index.html (main page)
+   □ css/ folder (dark theme styling)
+   □ js/ folder (interactive functionality)
+   □ images/ folder (icons and assets)
+   □ .htaccess (server config)
+   □ sitemap.xml (SEO)
+   □ robots.txt (search engines)
+   □ 404.html (error page)
+
+□ 5. SET PERMISSIONS
+   - Files: 644
+   - Folders: 755
+
+□ 6. TEST DEPLOYMENT
+   - Visit: https://aivideobuddy.com
+   - Should show dark theme AI Video Buddy
+   - Test on mobile device
+
+□ 7. ENABLE SSL (if not already active)
+   - Go to SSL/TLS in hPanel
+   - Enable "Force HTTPS"
+
+EXPECTED RESULT:
+✅ Dark cyberpunk theme with electric blue accents
+✅ 6 video AI companions visible
+✅ Interactive quiz functional
+✅ Pricing tiers displayed ($0-$249)
+✅ Mobile responsive design
+✅ Smooth animations and glow effects

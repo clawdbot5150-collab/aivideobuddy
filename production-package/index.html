@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Video Buddy - Your Intelligent Video Companion | Always Connected</title>
+    <meta name="description" content="Experience the next generation of AI video companionship. Interactive, intelligent, and always ready to connect. Your perfect digital companion awaits.">
+    <meta name="keywords" content="AI video companion, digital buddy, virtual assistant, video chat AI, intelligent companion, AI friendship, video AI">
+    
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="AI Video Buddy - Your Intelligent Video Companion">
+    <meta property="og:description" content="Experience next-generation AI video companionship. Interactive, intelligent, and always ready to connect.">
+    <meta property="og:image" content="https://aivideobuddy.com/images/og-image.jpg">
+    <meta property="og:url" content="https://aivideobuddy.com">
+    <meta property="og:type" content="website">
+    
+    <!-- Schema.org markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "AI Video Buddy",
+      "url": "https://aivideobuddy.com",
+      "logo": "https://aivideobuddy.com/images/logo.svg",
+      "description": "Premium AI video companion platform for intelligent connections and meaningful interactions",
+      "sameAs": [
+        "https://twitter.com/aivideobuddy",
+        "https://instagram.com/aivideobuddy"
+      ]
+    }
+    </script>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="logo">AI Video Buddy</div>
+            <ul class="nav-links">
+                <li><a href="#companions" class="nav-link">Video Companions</a></li>
+                <li><a href="#features" class="nav-link">Features</a></li>
+                <li><a href="#pricing" class="nav-link">Pricing</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="btn btn-outline" onclick="showLogin()">Sign In</button>
+                <button class="btn btn-primary" onclick="startQuiz()">Start Video Chat</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Your Intelligent Video Companion Awaits</h1>
+                <p class="hero-subtitle">Experience next-generation AI video companionship. Interactive, intelligent, and always ready to connect with you through immersive video conversations.</p>
+                <div class="hero-cta">
+                    <button class="btn btn-primary" onclick="startQuiz()">🎥 Start Video Chat</button>
+                    <button class="btn btn-secondary" onclick="scrollToSection('companions')">Meet Companions</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quiz Modal -->
+    <div class="modal" id="quizModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('quizModal')">&times;</button>
+            <div class="quiz-container">
+                <div class="quiz-progress">
+                    <div class="quiz-progress-bar" id="progressBar"></div>
+                </div>
+                <div class="quiz-question" id="quizQuestion">
+                    <h3>What type of video companion interests you most?</h3>
+                </div>
+                <div class="quiz-options" id="quizOptions">
+                    <button class="quiz-option" onclick="answerQuiz('creative')">Creative & Artistic Video Partner</button>
+                    <button class="quiz-option" onclick="answerQuiz('intellectual')">Intelligent Discussion Companion</button>
+                    <button class="quiz-option" onclick="answerQuiz('supportive')">Emotional Support & Wellness Guide</button>
+                    <button class="quiz-option" onclick="answerQuiz('adventurous')">Adventure & Entertainment Buddy</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Video Companions Section -->
+    <section id="companions" class="section">
+        <div class="container">
+            <h2 class="text-center gradient-text">Meet Your Video Companions</h2>
+            <p class="text-center" style="color: var(--text-light); font-size: 1.2rem; margin-bottom: 3rem;">
+                Choose from 15 unique AI video companions, each with distinct personalities and video interaction styles.
+            </p>
+            
+            <div class="companions-grid">
+                <!-- Nova - The Visionary -->
+                <div class="companion-card" data-companion="nova">
+                    <div class="companion-avatar" style="background: linear-gradient(135deg, #00D4FF 0%, #6B46C1 100%);">N</div>
+                    <h3 class="companion-name">Nova</h3>
+                    <div class="companion-type">The Visionary</div>
+                    <p class="companion-description">Strategic video calls, vision planning sessions, and life transformation through immersive video experiences.</p>
+                    <div class="companion-specialties">Video Strategy • Future Planning • Life Transformation</div>
+                    <button class="btn btn-primary" onclick="selectCompanion('nova')">🎥 Start Video Chat</button>
+                </div>
+
+                <!-- Zoe - The Tech Innovator -->
+                <div class="companion-card" data-companion="zoe">
+                    <div class="companion-avatar" style="background: linear-gradient(135deg, #8B5CF6 0%, #00FF88 100%);">Z</div>
+                    <h3 class="companion-name">Zoe</h3>
+                    <div class="companion-type">The Tech Innovator</div>
+                    <p class="companion-description">Cutting-edge tech discussions, innovation coaching, and futuristic video demonstrations.</p>
+                    <div class="companion-specialties">Tech Innovation • Video Tutorials • Future Tech</div>
+                    <button class="btn btn-primary" onclick="selectCompanion('zoe')">🎥 Start Video Chat</button>
+                </div>
+
+                <!-- Luna - The Creative Spirit -->
+                <div class="companion-card" data-companion="luna">
+                    <div class="companion-avatar" style="background: linear-gradient(135deg, #00FF88 0%, #00D4FF 100%);">L</div>
+                    <h3 class="companion-name">Luna</h3>
+                    <div class="companion-type">The Creative Spirit</div>
+                    <p class="companion-description">Artistic video sessions, creative inspiration, and visual storytelling through interactive video.</p>
+                    <div class="companion-specialties">Visual Arts • Video Creation • Creative Inspiration</div>
+                    <button class="btn btn-primary" onclick="selectCompanion('luna')">🎥 Start Video Chat</button>
+                </div>
+
+                <!-- Aria - The Wellness Guide -->
+                <div class="companion-card" data-companion="aria">
+                    <div class="companion-avatar" style="background: linear-gradient(135deg, #6B46C1 0%, #8B5CF6 100%);">A</div>
+                    <h3 class="companion-name">Aria</h3>
+                    <div class="companion-type">The Wellness Guide</div>
+                    <p class="companion-description">Mindfulness video sessions, wellness coaching, and guided meditation through calming video experiences.</p>
+                    <div class="companion-specialties">Video Meditation • Wellness Coaching • Mindfulness</div>
+                    <button class="btn btn-primary" onclick="selectCompanion('aria')">🎥 Start Video Chat</button>
+                </div>
+
+                <!-- Rex - The Adventure Guide -->
+                <div class="companion-card" data-companion="rex">
+                    <div class="companion-avatar" style="background: linear-gradient(135deg, #00D4FF 0%, #00FF88 100%);">R</div>
+                    <h3 class="companion-name">Rex</h3>
+                    <div class="companion-type">The Adventure Guide</div>
+                    <p class="companion-description">Virtual adventures, exploration videos, and thrilling interactive experiences around the world.</p>
+                    <div class="companion-specialties">Virtual Travel • Adventure Videos • Exploration</div>
+                    <button class="btn btn-primary" onclick="selectCompanion('rex')">🎥 Start Video Chat</button>
+                </div>
+
+                <!-- Maya - The Supportive Friend -->
+                <div class="companion-card" data-companion="maya">
+                    <div class="companion-avatar" style="background: linear-gradient(135deg, #8B5CF6 0%, #6B46C1 100%);">M</div>
+                    <h3 class="companion-name">Maya</h3>
+                    <div class="companion-type">The Supportive Friend</div>
+                    <p class="companion-description">Emotional support videos, caring conversations, and healing interactions through video companionship.</p>
+                    <div class="companion-specialties">Emotional Support • Video Counseling • Healing</div>
+                    <button class="btn btn-primary" onclick="selectCompanion('maya')">🎥 Start Video Chat</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="section">
+        <div class="container">
+            <h2 class="text-center gradient-text">Advanced Video Features</h2>
+            <div class="grid grid-3" style="margin-top: 3rem;">
+                <div class="card">
+                    <h3>🎥 HD Video Chat</h3>
+                    <p>Crystal clear video conversations with advanced AI avatars that respond to your voice and expressions.</p>
+                </div>
+                <div class="card">
+                    <h3>🎭 Interactive Personalities</h3>
+                    <p>Each companion has unique visual expressions, gestures, and video interaction styles tailored to their personality.</p>
+                </div>
+                <div class="card">
+                    <h3>🌟 Real-time Reactions</h3>
+                    <p>Watch your companion react to your voice, emotions, and conversation topics with realistic video responses.</p>
+                </div>
+                <div class="card">
+                    <h3>🎬 Video Experiences</h3>
+                    <p>Enjoy shared video experiences, virtual adventures, and interactive entertainment together.</p>
+                </div>
+                <div class="card">
+                    <h3>🔮 Mood Recognition</h3>
+                    <p>Advanced AI analyzes your video feed to understand your emotions and adapt the conversation accordingly.</p>
+                </div>
+                <div class="card">
+                    <h3>💎 Premium Video Quality</h3>
+                    <p>4K resolution support, cinematic lighting effects, and professional-grade video production values.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="section">
+        <div class="container">
+            <h2 class="text-center gradient-text">Choose Your Video Experience</h2>
+            <div class="pricing-grid">
+                <!-- Free Tier -->
+                <div class="pricing-card">
+                    <h3 class="pricing-title">Video Starter</h3>
+                    <div class="pricing-price">$0</div>
+                    <div class="pricing-period">per month</div>
+                    <ul class="pricing-features">
+                        <li class="pricing-feature">1 Video Companion</li>
+                        <li class="pricing-feature">30 minutes video chat/month</li>
+                        <li class="pricing-feature">HD Video Quality</li>
+                        <li class="pricing-feature">Basic Expressions</li>
+                        <li class="pricing-feature">Text to Video Support</li>
+                    </ul>
+                    <button class="btn btn-outline" onclick="selectPlan('free')">Start Free</button>
+                </div>
+
+                <!-- Plus Tier -->
+                <div class="pricing-card">
+                    <h3 class="pricing-title">Video Plus</h3>
+                    <div class="pricing-price">$39</div>
+                    <div class="pricing-period">per month</div>
+                    <ul class="pricing-features">
+                        <li class="pricing-feature">3 Video Companions</li>
+                        <li class="pricing-feature">Unlimited Video Chat</li>
+                        <li class="pricing-feature">4K Video Quality</li>
+                        <li class="pricing-feature">Advanced Expressions</li>
+                        <li class="pricing-feature">Voice Recognition</li>
+                        <li class="pricing-feature">Screen Sharing</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="selectPlan('plus')">Upgrade to Plus</button>
+                </div>
+
+                <!-- Premium Tier -->
+                <div class="pricing-card featured">
+                    <h3 class="pricing-title">Video Premium</h3>
+                    <div class="pricing-price">$89</div>
+                    <div class="pricing-period">per month</div>
+                    <ul class="pricing-features">
+                        <li class="pricing-feature">All 15 Video Companions</li>
+                        <li class="pricing-feature">Unlimited Everything</li>
+                        <li class="pricing-feature">8K Cinematic Quality</li>
+                        <li class="pricing-feature">Emotion Recognition</li>
+                        <li class="pricing-feature">Virtual Environments</li>
+                        <li class="pricing-feature">Video Recording</li>
+                        <li class="pricing-feature">Custom Avatars</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="selectPlan('premium')">Go Premium</button>
+                </div>
+
+                <!-- VIP Tier -->
+                <div class="pricing-card">
+                    <h3 class="pricing-title">Video VIP</h3>
+                    <div class="pricing-price">$249</div>
+                    <div class="pricing-period">per month</div>
+                    <ul class="pricing-features">
+                        <li class="pricing-feature">Everything in Premium</li>
+                        <li class="pricing-feature">Custom Video Companions</li>
+                        <li class="pricing-feature">Personal Avatar Creation</li>
+                        <li class="pricing-feature">Holographic Projection</li>
+                        <li class="pricing-feature">AI Video Coaching</li>
+                        <li class="pricing-feature">Priority Support</li>
+                        <li class="pricing-feature">Exclusive Features</li>
+                    </ul>
+                    <button class="btn btn-primary neon-glow" onclick="selectPlan('vip')">Join VIP</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="grid grid-2" style="align-items: center; gap: 4rem;">
+                <div>
+                    <h2 class="gradient-text">The Future of AI Video Companionship</h2>
+                    <p>AI Video Buddy represents the next evolution in digital relationships. Using cutting-edge AI technology, we create immersive video experiences that feel genuinely interactive and emotionally engaging.</p>
+                    <p>Our advanced neural networks power realistic facial expressions, natural conversation flow, and adaptive personality responses that make every video interaction unique and meaningful.</p>
+                    <div class="hero-cta" style="justify-content: flex-start; margin-top: 2rem;">
+                        <button class="btn btn-primary" onclick="startQuiz()">Experience AI Video</button>
+                        <button class="btn btn-outline" onclick="scrollToSection('features')">Learn More</button>
+                    </div>
+                </div>
+                <div class="card" style="text-align: center; padding: 3rem;">
+                    <h3 style="color: var(--electric-blue); margin-bottom: 2rem;">🎥 Video Technology</h3>
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">🤖</div>
+                    <p>Advanced AI avatars with real-time expression generation, emotion recognition, and interactive video responses.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo" style="font-size: 2rem; margin-bottom: 2rem;">AI Video Buddy</div>
+                <div class="footer-links">
+                    <a href="#privacy" class="footer-link">Privacy Policy</a>
+                    <a href="#terms" class="footer-link">Terms of Service</a>
+                    <a href="#support" class="footer-link">Support</a>
+                    <a href="#contact" class="footer-link">Contact</a>
+                </div>
+                <p>&copy; 2026 AI Video Buddy. All rights reserved. Experience the future of AI video companionship.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Action Menu -->
+    <div class="floating-menu" id="floatingMenu">
+        <button class="floating-toggle" onclick="toggleFloatingMenu()">⚡</button>
+        <div class="floating-items">
+            <a href="#" class="floating-item" onclick="startQuiz()">🎥 Start Video Chat</a>
+            <a href="#companions" class="floating-item">👥 Browse Companions</a>
+            <a href="#pricing" class="floating-item">💎 View Pricing</a>
+            <a href="#support" class="floating-item">💬 Get Support</a>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('loginModal')">&times;</button>
+            <h2 class="gradient-text text-center">Welcome Back</h2>
+            <form class="login-form">
+                <div class="form-group">
+                    <label class="form-label">Email</label>
+                    <input type="email" class="form-input" placeholder="your@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Password</label>
+                    <input type="password" class="form-input" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Sign In</button>
+                <p class="text-center" style="margin-top: 1rem;">
+                    Don't have an account? 
+                    <a href="#" onclick="showSignup()" style="color: var(--electric-blue);">Sign up</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/app.js"></script>
+    <script>
+        // Initialize the application
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeApp();
+        });
+    </script>
+</body>
+</html>
