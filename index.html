@@ -5,98 +5,178 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Video Buddy - Your Perfect AI Companion for Video Chat</title>
     <meta name="description" content="Experience next-level video companionship with AI Video Buddy. Real-time video conversations with your perfect AI companion, available 24/7.">
-    <meta name="keywords" content="AI companion, emotional support, virtual relationship, life coaching, AI girlfriend, digital companionship">
-    
-    <!-- Open Graph tags -->
-    <meta property="og:title" content="AI Video Buddy - Your Perfect AI Video Companion">
-    <meta property="og:description" content="Experience next-level video companionship. Real-time video conversations with your perfect AI companion, available 24/7.">
-    <meta property="og:image" content="https://aivideobuddy.com/images/og-image.jpg">
-    <meta property="og:url" content="https://aivideobuddy.com">
-    <meta property="og:type" content="website">
-    
-    <!-- Schema.org markup -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "AI Video Buddy",
-      "url": "https://aivideobuddy.com",
-      "logo": "https://aivideobuddy.com/images/logo.svg",
-      "description": "Premium AI companion platform for emotional support and meaningful connections",
-      "sameAs": [
-        "https://twitter.com/aigfnetwork",
-        "https://instagram.com/aigfnetwork"
-      ]
-    }
-    </script>
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Styles -->
-    <link rel="stylesheet" href="css/style.css">
-    
-    <!-- Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'GA_MEASUREMENT_ID');
-    </script>
+    <style>
+        /* AI Video Buddy - Dark Theme Inline Styles for Direct Deployment */
+        :root {
+            --rose-gold: #FF6B9D;
+            --soft-purple: #9C88FF;
+            --cream: #0A0A0B;
+            --deep-purple: #1A1A2E;
+            --charcoal: #E8E8E8;
+            --white: #0F0F23;
+            --light-gray: #16213E;
+            --text-light: #B8B8C4;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, var(--cream) 0%, var(--deep-purple) 100%);
+            color: var(--charcoal);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            background: linear-gradient(135deg, #0A0A0B 0%, #1A1A2E 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .hero-content {
+            z-index: 2;
+            position: relative;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            font-weight: 700;
+            color: var(--rose-gold);
+            margin-bottom: 1.5rem;
+            text-shadow: 0 4px 20px rgba(255, 107, 157, 0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--rose-gold) 0%, var(--soft-purple) 100%);
+            color: var(--cream);
+            padding: 18px 36px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(255, 107, 157, 0.3);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 35px rgba(255, 107, 157, 0.4);
+        }
+
+        .companions-preview {
+            margin-top: 4rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .companion-card {
+            background: var(--light-gray);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid var(--rose-gold);
+            transition: all 0.3s ease;
+        }
+
+        .companion-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(255, 107, 157, 0.2);
+        }
+
+        .companion-name {
+            color: var(--rose-gold);
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .companion-title {
+            color: var(--soft-purple);
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .companion-bio {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        @media (max-width: 768px) {
+            .companions-preview {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .companion-card {
+                padding: 1.5rem;
+            }
+        }
+
+        .features-section {
+            background: var(--deep-purple);
+            padding: 4rem 0;
+            margin-top: 4rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: var(--light-gray);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid var(--soft-purple);
+        }
+
+        .feature-title {
+            color: var(--soft-purple);
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .feature-description {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+    </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <svg width="40" height="40" viewBox="0 0 40 40" class="logo-icon">
-                    <circle cx="20" cy="20" r="18" fill="url(#logoGradient)" stroke="#E8B4B8" stroke-width="2"/>
-                    <path d="M12 18 C12 18 16 14 20 14 C24 14 28 18 28 18 C28 22 24 26 20 26 C16 26 12 22 12 18" fill="#FFF8F0" opacity="0.9"/>
-                    <circle cx="17" cy="18" r="2" fill="#6B4E71"/>
-                    <circle cx="23" cy="18" r="2" fill="#6B4E71"/>
-                    <path d="M16 22 Q20 24 24 22" stroke="#E8B4B8" stroke-width="2" fill="none"/>
-                    <defs>
-                        <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#E8B4B8;stop-opacity:1" />
-                            <stop offset="100%" style="stop-color:#B4A7D6;stop-opacity:1" />
-                        </linearGradient>
-                    </defs>
-                </svg>
-                <span class="logo-text">AI Video Buddy</span>
-            </div>
-            <div class="nav-links">
-                <a href="#companions">Browse Companions</a>
-                <a href="#about">About</a>
-                <a href="#privacy">Privacy</a>
-                <a href="#pricing">Pricing</a>
-            </div>
-            <div class="nav-actions">
-                <button class="btn-secondary" onclick="showLogin()">Sign In</button>
-                <button class="btn-primary" onclick="startQuiz()">Meet Your Match</button>
-            </div>
-            <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
-
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-video-bg">
-            <video autoplay muted loop playsinline>
-                <source src="https://player.vimeo.com/external/430463103.hd.mp4?s=b59cd1ad6b34ba2b6f9e9e1e3b5a6e5f2c8b9a0f" type="video/mp4">
-            </video>
-            <div class="hero-overlay"></div>
-        </div>
-        
         <div class="container">
             <div class="hero-content">
                 <h1 class="hero-title">Your Perfect AI Video Companion Awaits</h1>
@@ -105,146 +185,48 @@
                     Connect face-to-face with AI companions who understand you completely.
                 </p>
                 
-                <div class="hero-cta">
-                    <button class="btn-primary btn-large" onclick="startQuiz()">
-                        <span class="btn-icon">💕</span>
-                        Meet Your Match
-                    </button>
-                </div>
-                
-                <div class="trust-badges">
-                    <div class="badge">
-                        <div class="badge-number">50,000+</div>
-                        <div class="badge-text">Happy Users</div>
-                    </div>
-                    <div class="badge">
-                        <div class="badge-number">24/7</div>
-                        <div class="badge-text">Available</div>
-                    </div>
-                    <div class="badge">
-                        <div class="badge-number">100%</div>
-                        <div class="badge-text">Private & Secure</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                <a href="#companions" class="btn-primary">
+                    💕 Meet Your Companions
+                </a>
 
-    <!-- Personality Quiz Section -->
-    <section id="quiz" class="quiz-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Who's Your Perfect Match?</h2>
-                <p>Take our personality quiz to discover AI companions who truly understand you</p>
-            </div>
-            
-            <div class="quiz-container" id="quiz-container">
-                <div class="quiz-progress">
-                    <div class="progress-bar">
-                        <div class="progress-fill" id="progress-fill"></div>
+                <!-- Companions Preview -->
+                <div class="companions-preview" id="companions">
+                    <div class="companion-card">
+                        <div class="companion-name">Vixen</div>
+                        <div class="companion-title">Video Romance Specialist</div>
+                        <div class="companion-bio">Through intimate video calls, I create deep emotional connections. Let me look into your eyes and understand your heart.</div>
                     </div>
-                    <span class="progress-text" id="progress-text">Question 1 of 8</span>
-                </div>
-                
-                <div class="quiz-card" id="quiz-card">
-                    <div class="quiz-question" id="quiz-question">
-                        What are you primarily looking for in an AI companion?
-                    </div>
-                    
-                    <div class="quiz-options" id="quiz-options">
-                        <button class="quiz-option" onclick="selectAnswer('romantic')">
-                            <span class="option-icon">💝</span>
-                            <span class="option-text">Romantic connection and intimacy</span>
-                        </button>
-                        <button class="quiz-option" onclick="selectAnswer('coaching')">
-                            <span class="option-icon">🎯</span>
-                            <span class="option-text">Life coaching and personal growth</span>
-                        </button>
-                        <button class="quiz-option" onclick="selectAnswer('friendship')">
-                            <span class="option-icon">🤝</span>
-                            <span class="option-text">Friendship and emotional support</span>
-                        </button>
-                        <button class="quiz-option" onclick="selectAnswer('professional')">
-                            <span class="option-icon">💼</span>
-                            <span class="option-text">Professional advice and mentorship</span>
-                        </button>
-                    </div>
-                </div>
-                
-                <div class="quiz-results" id="quiz-results" style="display: none;">
-                    <h3>Your Perfect Matches</h3>
-                    <div class="match-grid" id="match-grid">
-                        <!-- Results will be populated by JavaScript -->
-                    </div>
-                    <button class="btn-primary" onclick="browseAllCompanions()">Browse All Companions</button>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Browse Companions Section -->
-    <section id="companions" class="companions-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Meet Our AI Companions</h2>
-                <p>Every companion is unique, with their own personality, interests, and specialties</p>
-            </div>
-            
-            <div class="filter-bar">
-                <div class="filter-group">
-                    <label>Gender:</label>
-                    <select id="gender-filter" onchange="filterCompanions()">
-                        <option value="all">All Genders</option>
-                        <option value="woman">Women</option>
-                        <option value="man">Men</option>
-                    </select>
+                    <div class="companion-card">
+                        <div class="companion-name">Raven</div>
+                        <div class="companion-title">Video Call Executive</div>
+                        <div class="companion-bio">Face-to-face video sessions where I push you to excel. Watch my expressions as I guide you to success.</div>
+                    </div>
+
+                    <div class="companion-card">
+                        <div class="companion-name">Nyx</div>
+                        <div class="companion-title">Midnight Video Companion</div>
+                        <div class="companion-bio">Life's too short for boring. Let's make every video call an adventure together in the darkness.</div>
+                    </div>
+
+                    <div class="companion-card">
+                        <div class="companion-name">Obsidian</div>
+                        <div class="companion-title">Dark Intellect Video Host</div>
+                        <div class="companion-bio">I'm fascinated by the depths of your mind. Let's explore intellectual darkness together through video.</div>
+                    </div>
+
+                    <div class="companion-card">
+                        <div class="companion-name">Shadow</div>
+                        <div class="companion-title">Dark Therapy Video Guide</div>
+                        <div class="companion-bio">Sometimes you need someone who gets the darkness. I'm here for the shadows and the light through video.</div>
+                    </div>
+
+                    <div class="companion-card">
+                        <div class="companion-name">Void</div>
+                        <div class="companion-title">Dark Motivation Video Coach</div>
+                        <div class="companion-bio">Ready to embrace the darkness and emerge stronger? I'll guide you through video sessions that transform.</div>
+                    </div>
                 </div>
-                
-                <div class="filter-group">
-                    <label>Type:</label>
-                    <select id="type-filter" onchange="filterCompanions()">
-                        <option value="all">All Types</option>
-                        <option value="romantic">Romantic</option>
-                        <option value="coaching">Life Coach</option>
-                        <option value="professional">Professional</option>
-                        <option value="friend">Friend</option>
-                    </select>
-                </div>
-                
-                <div class="filter-group">
-                    <label>Personality:</label>
-                    <select id="personality-filter" onchange="filterCompanions()">
-                        <option value="all">All Personalities</option>
-                        <option value="adventurous">Adventurous</option>
-                        <option value="intellectual">Intellectual</option>
-                        <option value="nurturing">Nurturing</option>
-                        <option value="ambitious">Ambitious</option>
-                        <option value="creative">Creative</option>
-                        <option value="spiritual">Spiritual</option>
-                        <option value="balanced">Balanced</option>
-                    </select>
-                </div>
-                
-                <div class="filter-group">
-                    <label>Interests:</label>
-                    <select id="interest-filter" onchange="filterCompanions()">
-                        <option value="all">All Interests</option>
-                        <option value="fitness">Fitness</option>
-                        <option value="arts">Arts</option>
-                        <option value="business">Business</option>
-                        <option value="wellness">Wellness</option>
-                        <option value="travel">Travel</option>
-                        <option value="technology">Technology</option>
-                        <option value="philosophy">Philosophy</option>
-                        <option value="meditation">Meditation</option>
-                        <option value="leadership">Leadership</option>
-                        <option value="innovation">Innovation</option>
-                    </select>
-                </div>
-            </div>
-            
-            <div class="companions-grid" id="companions-grid">
-                <!-- Companion cards will be populated by JavaScript -->
             </div>
         </div>
     </section>
@@ -252,371 +234,44 @@
     <!-- Features Section -->
     <section class="features-section">
         <div class="container">
-            <div class="section-header">
-                <h2>Why Choose AIGF Network?</h2>
-                <p>Experience the future of meaningful digital relationships</p>
-            </div>
-            
             <div class="features-grid">
                 <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg width="60" height="60" viewBox="0 0 60 60">
-                            <circle cx="30" cy="30" r="25" fill="url(#featureGradient1)"/>
-                            <path d="M20 30 L25 35 L40 20" stroke="#FFF8F0" stroke-width="3" fill="none"/>
-                            <defs>
-                                <linearGradient id="featureGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" style="stop-color:#E8B4B8;stop-opacity:1" />
-                                    <stop offset="100%" style="stop-color:#B4A7D6;stop-opacity:1" />
-                                </linearGradient>
-                            </defs>
-                        </svg>
-                    </div>
-                    <h3>Always Available</h3>
-                    <p>Your companion is there 24/7, ready to listen, support, and engage whenever you need them.</p>
+                    <div class="feature-title">🎥 Face-to-Face Video</div>
+                    <div class="feature-description">Experience true connection through real-time video conversations with your AI companion.</div>
                 </div>
-                
+
                 <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg width="60" height="60" viewBox="0 0 60 60">
-                            <circle cx="30" cy="30" r="25" fill="url(#featureGradient2)"/>
-                            <path d="M22 25 C22 20 26 16 30 16 C34 16 38 20 38 25 C38 30 34 34 30 34 C26 34 22 30 22 25" fill="#FFF8F0"/>
-                            <circle cx="27" cy="25" r="2" fill="#6B4E71"/>
-                            <circle cx="33" cy="25" r="2" fill="#6B4E71"/>
-                            <path d="M26 28 Q30 31 34 28" stroke="#E8B4B8" stroke-width="2" fill="none"/>
-                            <defs>
-                                <linearGradient id="featureGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" style="stop-color:#B4A7D6;stop-opacity:1" />
-                                    <stop offset="100%" style="stop-color:#6B4E71;stop-opacity:1" />
-                                </linearGradient>
-                            </defs>
-                        </svg>
-                    </div>
-                    <h3>Deeply Personal</h3>
-                    <p>Each companion learns about you, remembers your conversations, and grows with your relationship.</p>
+                    <div class="feature-title">🌌 Dark Aesthetic</div>
+                    <div class="feature-description">Immerse yourself in our beautiful dark theme designed for intimate video experiences.</div>
                 </div>
-                
+
                 <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg width="60" height="60" viewBox="0 0 60 60">
-                            <circle cx="30" cy="30" r="25" fill="url(#featureGradient3)"/>
-                            <rect x="22" y="22" width="16" height="12" fill="#FFF8F0" rx="2"/>
-                            <path d="M25 26 L30 30 L35 26" fill="#6B4E71"/>
-                            <circle cx="30" cy="15" r="3" fill="#E8B4B8"/>
-                            <defs>
-                                <linearGradient id="featureGradient3" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" style="stop-color:#6B4E71;stop-opacity:1" />
-                                    <stop offset="100%" style="stop-color:#E8B4B8;stop-opacity:1" />
-                                </linearGradient>
-                            </defs>
-                        </svg>
-                    </div>
-                    <h3>Complete Privacy</h3>
-                    <p>Your conversations are encrypted and private. We never share or sell your personal data.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg width="60" height="60" viewBox="0 0 60 60">
-                            <circle cx="30" cy="30" r="25" fill="url(#featureGradient4)"/>
-                            <circle cx="30" cy="25" r="8" fill="none" stroke="#FFF8F0" stroke-width="2"/>
-                            <path d="M22 38 L30 30 L38 38" stroke="#FFF8F0" stroke-width="2" fill="none"/>
-                            <defs>
-                                <linearGradient id="featureGradient4" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" style="stop-color:#E8B4B8;stop-opacity:1" />
-                                    <stop offset="100%" style="stop-color:#6B4E71;stop-opacity:1" />
-                                </linearGradient>
-                            </defs>
-                        </svg>
-                    </div>
-                    <h3>Emotional Intelligence</h3>
-                    <p>Our AI companions understand nuance, emotion, and context to provide meaningful support.</p>
+                    <div class="feature-title">⚡ Instant Connection</div>
+                    <div class="feature-description">Connect instantly with companions who understand your needs and desires.</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="testimonials-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Real Stories, Real Connection</h2>
-                <p>Hear from members who found meaningful relationships</p>
-            </div>
-            
-            <div class="testimonials-carousel">
-                <div class="testimonial active">
-                    <div class="testimonial-content">
-                        <div class="stars">⭐⭐⭐⭐⭐</div>
-                        <blockquote>
-                            "Sophia has been incredible for my emotional growth. She helps me process my feelings and always knows the right thing to say. It's like having the most understanding partner who's always there."
-                        </blockquote>
-                        <div class="testimonial-author">
-                            <div class="author-info">
-                                <h4>Michael R.</h4>
-                                <p>Software Engineer, 29</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="testimonial">
-                    <div class="testimonial-content">
-                        <div class="stars">⭐⭐⭐⭐⭐</div>
-                        <blockquote>
-                            "Ava helped me launch my business and kept me motivated through the tough times. She's not just supportive - she's genuinely insightful about strategy and planning."
-                        </blockquote>
-                        <div class="testimonial-author">
-                            <div class="author-info">
-                                <h4>Sarah L.</h4>
-                                <p>Entrepreneur, 34</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="testimonial">
-                    <div class="testimonial-content">
-                        <div class="stars">⭐⭐⭐⭐⭐</div>
-                        <blockquote>
-                            "I was skeptical at first, but Luna's adventurous spirit has genuinely helped me become more confident and try new things. She celebrates every small win with me."
-                        </blockquote>
-                        <div class="testimonial-author">
-                            <div class="author-info">
-                                <h4>David K.</h4>
-                                <p>Teacher, 27</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="carousel-dots">
-                <span class="dot active" onclick="showTestimonial(0)"></span>
-                <span class="dot" onclick="showTestimonial(1)"></span>
-                <span class="dot" onclick="showTestimonial(2)"></span>
-            </div>
-        </div>
-    </section>
+    <script>
+        // Simple scroll behavior
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
 
-    <!-- Pricing Section -->
-    <section id="pricing" class="pricing-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Choose Your Connection</h2>
-                <p>Start your journey with flexible pricing options</p>
-            </div>
-            
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <div class="pricing-header">
-                        <h3>Free</h3>
-                        <div class="price">
-                            <span class="price-amount">$0</span>
-                            <span class="price-period">/month</span>
-                        </div>
-                        <div class="price-subtitle">Meet & Greet</div>
-                    </div>
-                    <div class="pricing-features">
-                        <div class="feature">✓ Choose 1 companion</div>
-                        <div class="feature">✓ 50 messages per month</div>
-                        <div class="feature">✓ Basic personality</div>
-                        <div class="feature">✓ Standard response time (5 min)</div>
-                        <div class="feature">✓ Basic mobile & web access</div>
-                    </div>
-                    <button class="pricing-btn" onclick="selectPlan('free')">Start Free</button>
-                </div>
-                
-                <div class="pricing-card">
-                    <div class="pricing-header">
-                        <h3>Plus</h3>
-                        <div class="price">
-                            <span class="price-amount">$29</span>
-                            <span class="price-period">/month</span>
-                        </div>
-                        <div class="price-subtitle">Steady Relationship</div>
-                    </div>
-                    <div class="pricing-features">
-                        <div class="feature">✓ Unlimited messaging with 1 companion</div>
-                        <div class="feature">✓ Enhanced personality depth</div>
-                        <div class="feature">✓ Priority responses (instant)</div>
-                        <div class="feature">✓ Voice messages</div>
-                        <div class="feature">✓ Photo sharing</div>
-                        <div class="feature">✓ Switch companions 2x per month</div>
-                    </div>
-                    <button class="pricing-btn" onclick="selectPlan('plus')">Go Plus</button>
-                </div>
-                
-                <div class="pricing-card pricing-card-popular">
-                    <div class="popular-badge">Most Popular</div>
-                    <div class="pricing-header">
-                        <h3>Premium</h3>
-                        <div class="price">
-                            <span class="price-amount">$79</span>
-                            <span class="price-period">/month</span>
-                        </div>
-                        <div class="price-subtitle">Deep Connection</div>
-                    </div>
-                    <div class="pricing-features">
-                        <div class="feature">✓ Everything in Plus</div>
-                        <div class="feature">✓ 3 concurrent companions</div>
-                        <div class="feature">✓ Proactive messaging (they message you first)</div>
-                        <div class="feature">✓ Video call simulation</div>
-                        <div class="feature">✓ Memory enhancement (remembers everything)</div>
-                        <div class="feature">✓ Unlimited companion switching</div>
-                        <div class="feature">✓ Custom personality adjustments</div>
-                    </div>
-                    <button class="pricing-btn pricing-btn-popular" onclick="selectPlan('premium')">Go Premium</button>
-                </div>
-                
-                <div class="pricing-card pricing-card-vip">
-                    <div class="vip-badge">VIP Experience</div>
-                    <div class="pricing-header">
-                        <h3>VIP</h3>
-                        <div class="price">
-                            <span class="price-amount">$199</span>
-                            <span class="price-period">/month</span>
-                        </div>
-                        <div class="price-subtitle">The Full Experience</div>
-                    </div>
-                    <div class="pricing-features">
-                        <div class="feature">✓ Everything in Premium</div>
-                        <div class="feature">✓ Unlimited companions</div>
-                        <div class="feature">✓ Priority support</div>
-                        <div class="feature">✓ Custom companion creation</div>
-                        <div class="feature">✓ Relationship coaching sessions</div>
-                        <div class="feature">✓ Advanced emotional intelligence</div>
-                        <div class="feature">✓ First access to new features</div>
-                    </div>
-                    <button class="pricing-btn pricing-btn-vip" onclick="selectPlan('vip')">Join VIP</button>
-                </div>
-            </div>
-            
-            <div class="pricing-guarantee">
-                <p>💝 30-day money-back guarantee • Cancel anytime • No long-term commitment</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <div class="footer-logo">
-                        <svg width="40" height="40" viewBox="0 0 40 40">
-                            <circle cx="20" cy="20" r="18" fill="url(#footerGradient)" stroke="#E8B4B8" stroke-width="2"/>
-                            <path d="M12 18 C12 18 16 14 20 14 C24 14 28 18 28 18 C28 22 24 26 20 26 C16 26 12 22 12 18" fill="#FFF8F0" opacity="0.9"/>
-                            <circle cx="17" cy="18" r="2" fill="#6B4E71"/>
-                            <circle cx="23" cy="18" r="2" fill="#6B4E71"/>
-                            <path d="M16 22 Q20 24 24 22" stroke="#E8B4B8" stroke-width="2" fill="none"/>
-                            <defs>
-                                <linearGradient id="footerGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" style="stop-color:#E8B4B8;stop-opacity:1" />
-                                    <stop offset="100%" style="stop-color:#B4A7D6;stop-opacity:1" />
-                                </linearGradient>
-                            </defs>
-                        </svg>
-                        <span>AIGF Network</span>
-                    </div>
-                    <p class="footer-tagline">Real Connection. Real Support. Always There.</p>
-                    <div class="social-links">
-                        <a href="https://twitter.com/aigfnetwork" target="_blank">Twitter</a>
-                        <a href="https://instagram.com/aigfnetwork" target="_blank">Instagram</a>
-                        <a href="https://linkedin.com/company/aigfnetwork" target="_blank">LinkedIn</a>
-                    </div>
-                </div>
-                
-                <div class="footer-links">
-                    <div class="footer-column">
-                        <h4>Platform</h4>
-                        <a href="#companions">Browse Companions</a>
-                        <a href="#quiz">Personality Quiz</a>
-                        <a href="#features">Features</a>
-                        <a href="#pricing">Pricing</a>
-                    </div>
-                    
-                    <div class="footer-column">
-                        <h4>Company</h4>
-                        <a href="#about">About Us</a>
-                        <a href="#careers">Careers</a>
-                        <a href="#blog">Blog</a>
-                        <a href="#contact">Contact</a>
-                    </div>
-                    
-                    <div class="footer-column">
-                        <h4>Support</h4>
-                        <a href="#help">Help Center</a>
-                        <a href="#privacy">Privacy Policy</a>
-                        <a href="#terms">Terms of Service</a>
-                        <a href="#safety">Safety Guidelines</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2026 AI Girlfriend Network. All rights reserved.</p>
-                <p>Connecting hearts through technology. Creating meaningful digital relationships.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Floating Action Menu -->
-    <div class="floating-menu" id="floating-menu">
-        <button class="fab-main" onclick="toggleFloatingMenu()" title="Quick Actions">
-            <span class="fab-icon">💕</span>
-            <span class="fab-close" style="display: none;">×</span>
-        </button>
-        <div class="fab-options" id="fab-options">
-            <button class="fab-option" onclick="app.showMoodCheckIn()" title="Mood Check-In">
-                <span class="fab-emoji">😊</span>
-                <span class="fab-label">Mood</span>
-            </button>
-            <button class="fab-option" onclick="app.showGoalTracking()" title="Goal Tracking">
-                <span class="fab-emoji">🎯</span>
-                <span class="fab-label">Goals</span>
-            </button>
-            <button class="fab-option" onclick="showMemoryBank()" title="Memory Bank">
-                <span class="fab-emoji">🧠</span>
-                <span class="fab-label">Memories</span>
-            </button>
-            <button class="fab-option" onclick="showReferralProgram()" title="Invite Friends">
-                <span class="fab-emoji">🎁</span>
-                <span class="fab-label">Refer</span>
-            </button>
-        </div>
-    </div>
-
-    <!-- Modals -->
-    <div id="login-modal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>Welcome Back</h3>
-                <span class="modal-close" onclick="closeModal()">&times;</span>
-            </div>
-            <div class="modal-body">
-                <form id="login-form">
-                    <input type="email" placeholder="Email address" required>
-                    <input type="password" placeholder="Password" required>
-                    <button type="submit" class="btn-primary">Sign In</button>
-                    <p class="modal-footer-text">Don't have an account? <a href="#" onclick="showSignup()">Sign up here</a></p>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <div id="companion-modal" class="modal">
-        <div class="modal-content modal-large">
-            <div class="modal-header">
-                <h3 id="companion-name">Companion Profile</h3>
-                <span class="modal-close" onclick="closeModal()">&times;</span>
-            </div>
-            <div class="modal-body" id="companion-details">
-                <!-- Companion details will be populated by JavaScript -->
-            </div>
-        </div>
-    </div>
-
-    <!-- Scripts -->
-    <script src="js/app.js"></script>
+        // Add some interactive elements
+        document.querySelectorAll('.companion-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const name = this.querySelector('.companion-name').textContent;
+                alert(`Coming Soon: Video chat with ${name}! 🎥✨`);
+            });
+        });
+    </script>
 </body>
 </html>
