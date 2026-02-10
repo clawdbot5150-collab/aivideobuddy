@@ -1,13 +1,13 @@
-/* AIGF Network - Sophisticated AI Companion Platform Styles */
+/* AI Video Buddy - Dark Theme AI Companion Platform Styles */
 :root {
-    --rose-gold: #E8B4B8;
-    --soft-purple: #B4A7D6;
-    --cream: #FFF8F0;
-    --deep-purple: #6B4E71;
-    --charcoal: #2D2D2D;
-    --white: #FFFFFF;
-    --light-gray: #F7F5F3;
-    --text-light: #8B8680;
+    --rose-gold: #FF6B9D;
+    --soft-purple: #9C88FF;
+    --cream: #0A0A0B;
+    --deep-purple: #1A1A2E;
+    --charcoal: #E8E8E8;
+    --white: #0F0F23;
+    --light-gray: #16213E;
+    --text-light: #B8B8C4;
     
     --font-heading: 'Playfair Display', serif;
     --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
