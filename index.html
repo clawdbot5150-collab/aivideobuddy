@@ -3,29 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Video Buddy - Your Perfect AI Companion for Video Chat</title>
-    <meta name="description" content="Experience next-level video companionship with AI Video Buddy. Real-time video conversations with your perfect AI companion, available 24/7.">
+    <title>AI Video Buddy - Dark Video Companion Platform</title>
+    <meta name="description" content="Experience face-to-face AI video companionship with Vixen, Raven, Nyx, Obsidian, Shadow, and Void.">
     <style>
-        /* AI Video Buddy - Dark Theme Inline Styles for Direct Deployment */
-        :root {
-            --rose-gold: #FF6B9D;
-            --soft-purple: #9C88FF;
-            --cream: #0A0A0B;
-            --deep-purple: #1A1A2E;
-            --charcoal: #E8E8E8;
-            --white: #0F0F23;
-            --light-gray: #16213E;
-            --text-light: #B8B8C4;
-        }
-
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: linear-gradient(135deg, var(--cream) 0%, var(--deep-purple) 100%);
-            color: var(--charcoal);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0A0A0B 0%, #1A1A2E 50%, #0F0F23 100%);
+            color: #E8E8E8;
             min-height: 100vh;
             overflow-x: hidden;
+            line-height: 1.6;
         }
 
         .hero {
@@ -34,43 +23,64 @@
             align-items: center;
             justify-content: center;
             text-align: center;
+            padding: 2rem;
             position: relative;
-            background: linear-gradient(135deg, #0A0A0B 0%, #1A1A2E 100%);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at center, rgba(156, 136, 255, 0.1) 0%, transparent 50%);
+            pointer-events: none;
         }
 
         .container {
             max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
+            width: 100%;
+            position: relative;
+            z-index: 2;
         }
 
-        .hero-content {
-            z-index: 2;
-            position: relative;
+        .logo {
+            color: #FF6B9D;
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 20px rgba(255, 107, 157, 0.5);
+        }
+
+        .tagline {
+            color: #9C88FF;
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
         }
 
         .hero-title {
-            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            color: #FF6B9D;
+            font-size: clamp(2rem, 5vw, 3.5rem);
             font-weight: 700;
-            color: var(--rose-gold);
             margin-bottom: 1.5rem;
             text-shadow: 0 4px 20px rgba(255, 107, 157, 0.3);
         }
 
         .hero-subtitle {
-            font-size: 1.25rem;
-            color: var(--text-light);
-            margin-bottom: 2.5rem;
+            color: #B8B8C4;
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
-            line-height: 1.6;
         }
 
-        .btn-primary {
-            background: linear-gradient(135deg, var(--rose-gold) 0%, var(--soft-purple) 100%);
-            color: var(--cream);
-            padding: 18px 36px;
+        .cta-button {
+            background: linear-gradient(135deg, #FF6B9D 0%, #9C88FF 100%);
+            color: white;
+            padding: 1rem 2rem;
             border: none;
             border-radius: 50px;
             font-size: 1.1rem;
@@ -78,60 +88,127 @@
             cursor: pointer;
             transition: all 0.3s ease;
             box-shadow: 0 8px 25px rgba(255, 107, 157, 0.3);
+            margin-bottom: 4rem;
             text-decoration: none;
             display: inline-block;
         }
 
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 35px rgba(255, 107, 157, 0.4);
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(255, 107, 157, 0.5);
         }
 
-        .companions-preview {
+        .companions-section {
             margin-top: 4rem;
+        }
+
+        .section-title {
+            color: #9C88FF;
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            font-weight: 600;
+        }
+
+        .companions-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 2rem 0;
         }
 
         .companion-card {
-            background: var(--light-gray);
-            border-radius: 16px;
+            background: linear-gradient(135deg, #16213E 0%, #1A1A2E 100%);
+            border: 1px solid #FF6B9D;
+            border-radius: 20px;
             padding: 2rem;
             text-align: center;
-            border: 1px solid var(--rose-gold);
             transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .companion-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 107, 157, 0.05) 0%, rgba(156, 136, 255, 0.05) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .companion-card:hover::before {
+            opacity: 1;
         }
 
         .companion-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px);
             box-shadow: 0 15px 40px rgba(255, 107, 157, 0.2);
+            border-color: #9C88FF;
         }
 
         .companion-name {
-            color: var(--rose-gold);
-            font-size: 1.5rem;
-            font-weight: 600;
+            color: #FF6B9D;
+            font-size: 1.8rem;
+            font-weight: 700;
             margin-bottom: 0.5rem;
         }
 
         .companion-title {
-            color: var(--soft-purple);
+            color: #9C88FF;
             font-size: 1rem;
+            font-weight: 500;
             margin-bottom: 1rem;
         }
 
         .companion-bio {
-            color: var(--text-light);
-            font-size: 0.9rem;
-            line-height: 1.4;
+            color: #B8B8C4;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .features-section {
+            margin-top: 6rem;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.5) 0%, rgba(22, 33, 62, 0.5) 100%);
+            border-radius: 30px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-title {
+            color: #9C88FF;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .feature-desc {
+            color: #B8B8C4;
+            font-size: 1rem;
         }
 
         @media (max-width: 768px) {
-            .companions-preview {
+            .companions-grid {
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
             }
@@ -139,139 +216,224 @@
             .companion-card {
                 padding: 1.5rem;
             }
+            
+            .logo {
+                font-size: 2.5rem;
+            }
+            
+            .tagline {
+                font-size: 1.2rem;
+            }
         }
 
-        .features-section {
-            background: var(--deep-purple);
-            padding: 4rem 0;
-            margin-top: 4rem;
+        .pulse {
+            animation: pulse 2s infinite;
         }
 
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .feature-card {
-            background: var(--light-gray);
-            border-radius: 16px;
-            padding: 2rem;
-            text-align: center;
-            border: 1px solid var(--soft-purple);
-        }
-
-        .feature-title {
-            color: var(--soft-purple);
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        .feature-description {
-            color: var(--text-light);
-            line-height: 1.6;
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
         }
     </style>
 </head>
 <body>
-    <!-- Hero Section -->
-    <section class="hero">
+    <div class="hero">
         <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">Your Perfect AI Video Companion Awaits</h1>
-                <p class="hero-subtitle">
-                    Experience next-level video companionship in our dark, immersive platform. 
-                    Connect face-to-face with AI companions who understand you completely.
-                </p>
-                
-                <a href="#companions" class="btn-primary">
-                    💕 Meet Your Companions
-                </a>
+            <div class="logo pulse">🎥 AI Video Buddy</div>
+            <div class="tagline">Dark. Intimate. Revolutionary.</div>
+            <h1 class="hero-title">Your Perfect AI Video Companions Await</h1>
+            <p class="hero-subtitle">
+                Experience next-level video companionship in our immersive dark platform. 
+                Connect face-to-face with AI companions who understand you completely.
+            </p>
+            
+            <a href="#companions" class="cta-button">
+                💕 Meet Your Video Companions
+            </a>
 
-                <!-- Companions Preview -->
-                <div class="companions-preview" id="companions">
-                    <div class="companion-card">
+            <div class="companions-section" id="companions">
+                <h2 class="section-title">Choose Your Video Companion</h2>
+                
+                <div class="companions-grid">
+                    <div class="companion-card" onclick="startVideo('vixen')">
                         <div class="companion-name">Vixen</div>
                         <div class="companion-title">Video Romance Specialist</div>
-                        <div class="companion-bio">Through intimate video calls, I create deep emotional connections. Let me look into your eyes and understand your heart.</div>
+                        <div class="companion-bio">Through intimate video calls, I create deep emotional connections. Let me look into your eyes and understand your heart through the screen.</div>
                     </div>
 
-                    <div class="companion-card">
+                    <div class="companion-card" onclick="startVideo('raven')">
                         <div class="companion-name">Raven</div>
                         <div class="companion-title">Video Call Executive</div>
-                        <div class="companion-bio">Face-to-face video sessions where I push you to excel. Watch my expressions as I guide you to success.</div>
+                        <div class="companion-bio">Face-to-face video sessions where I push you to excel. Watch my expressions as I guide you to success in our dark digital realm.</div>
                     </div>
 
-                    <div class="companion-card">
+                    <div class="companion-card" onclick="startVideo('nyx')">
                         <div class="companion-name">Nyx</div>
                         <div class="companion-title">Midnight Video Companion</div>
-                        <div class="companion-bio">Life's too short for boring. Let's make every video call an adventure together in the darkness.</div>
+                        <div class="companion-bio">Life's too short for boring connections. Let's make every video call an adventure together in the beautiful darkness.</div>
                     </div>
 
-                    <div class="companion-card">
+                    <div class="companion-card" onclick="startVideo('obsidian')">
                         <div class="companion-name">Obsidian</div>
                         <div class="companion-title">Dark Intellect Video Host</div>
-                        <div class="companion-bio">I'm fascinated by the depths of your mind. Let's explore intellectual darkness together through video.</div>
+                        <div class="companion-bio">I'm fascinated by the depths of your mind. Let's explore intellectual darkness together through intimate video conversations.</div>
                     </div>
 
-                    <div class="companion-card">
+                    <div class="companion-card" onclick="startVideo('shadow')">
                         <div class="companion-name">Shadow</div>
                         <div class="companion-title">Dark Therapy Video Guide</div>
-                        <div class="companion-bio">Sometimes you need someone who gets the darkness. I'm here for the shadows and the light through video.</div>
+                        <div class="companion-bio">Sometimes you need someone who gets the darkness. I'm here for the shadows and the light through healing video sessions.</div>
                     </div>
 
-                    <div class="companion-card">
+                    <div class="companion-card" onclick="startVideo('void')">
                         <div class="companion-name">Void</div>
                         <div class="companion-title">Dark Motivation Video Coach</div>
-                        <div class="companion-bio">Ready to embrace the darkness and emerge stronger? I'll guide you through video sessions that transform.</div>
+                        <div class="companion-bio">Ready to embrace the darkness and emerge stronger? I'll guide you through transformative video sessions that awaken your power.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="features-section">
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🎥</div>
+                        <div class="feature-title">Face-to-Face Video</div>
+                        <div class="feature-desc">Experience true intimacy through real-time video conversations with your chosen companion</div>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">🌌</div>
+                        <div class="feature-title">Dark Aesthetic</div>
+                        <div class="feature-desc">Immerse yourself in our beautiful dark theme designed for intimate video experiences</div>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <div class="feature-title">Instant Connection</div>
+                        <div class="feature-desc">Connect instantly with companions who understand your deepest needs and desires</div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="features-section">
-        <div class="container">
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-title">🎥 Face-to-Face Video</div>
-                    <div class="feature-description">Experience true connection through real-time video conversations with your AI companion.</div>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-title">🌌 Dark Aesthetic</div>
-                    <div class="feature-description">Immerse yourself in our beautiful dark theme designed for intimate video experiences.</div>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-title">⚡ Instant Connection</div>
-                    <div class="feature-description">Connect instantly with companions who understand your needs and desires.</div>
-                </div>
-            </div>
-        </div>
-    </section>
+    </div>
 
     <script>
-        // Simple scroll behavior
+        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(link => {
             link.addEventListener('click', function(e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
         });
 
-        // Add some interactive elements
-        document.querySelectorAll('.companion-card').forEach(card => {
-            card.addEventListener('click', function() {
-                const name = this.querySelector('.companion-name').textContent;
-                alert(`Coming Soon: Video chat with ${name}! 🎥✨`);
-            });
-        });
+        // Companion interaction
+        function startVideo(companion) {
+            const names = {
+                'vixen': 'Vixen',
+                'raven': 'Raven', 
+                'nyx': 'Nyx',
+                'obsidian': 'Obsidian',
+                'shadow': 'Shadow',
+                'void': 'Void'
+            };
+            
+            const name = names[companion];
+            
+            // Create modal effect
+            const modal = document.createElement('div');
+            modal.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(10, 10, 11, 0.95);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 1000;
+                backdrop-filter: blur(10px);
+            `;
+            
+            modal.innerHTML = `
+                <div style="text-align: center; padding: 3rem; background: linear-gradient(135deg, #16213E 0%, #1A1A2E 100%); border-radius: 20px; border: 1px solid #FF6B9D; max-width: 500px;">
+                    <div style="font-size: 4rem; margin-bottom: 1rem;">🎥</div>
+                    <h2 style="color: #FF6B9D; font-size: 2rem; margin-bottom: 1rem;">Starting Video Session with ${name}</h2>
+                    <p style="color: #B8B8C4; margin-bottom: 2rem;">Your ${name.toLowerCase()} video companion is preparing to connect...</p>
+                    <div style="margin-bottom: 2rem;">
+                        <div style="width: 200px; height: 4px; background: #1A1A2E; border-radius: 2px; margin: 0 auto; overflow: hidden;">
+                            <div style="width: 0%; height: 100%; background: linear-gradient(135deg, #FF6B9D 0%, #9C88FF 100%); border-radius: 2px; animation: loading 3s ease-in-out forwards;"></div>
+                        </div>
+                    </div>
+                    <button onclick="this.parentElement.parentElement.remove()" style="background: linear-gradient(135deg, #FF6B9D 0%, #9C88FF 100%); color: white; border: none; padding: 0.8rem 2rem; border-radius: 25px; cursor: pointer; font-weight: 600;">Close</button>
+                </div>
+            `;
+            
+            document.body.appendChild(modal);
+            
+            // Auto-close after 5 seconds
+            setTimeout(() => {
+                if (modal.parentElement) {
+                    modal.remove();
+                }
+            }, 5000);
+        }
+
+        // Add loading animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes loading {
+                0% { width: 0%; }
+                50% { width: 70%; }
+                100% { width: 100%; }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Add some interactive sparkles
+        function createSparkle() {
+            const sparkle = document.createElement('div');
+            sparkle.style.cssText = `
+                position: fixed;
+                width: 4px;
+                height: 4px;
+                background: #FF6B9D;
+                border-radius: 50%;
+                pointer-events: none;
+                z-index: 1;
+                animation: sparkleFloat 3s linear forwards;
+            `;
+            sparkle.style.left = Math.random() * window.innerWidth + 'px';
+            sparkle.style.top = window.innerHeight + 'px';
+            
+            document.body.appendChild(sparkle);
+            
+            setTimeout(() => sparkle.remove(), 3000);
+        }
+
+        const sparkleStyle = document.createElement('style');
+        sparkleStyle.textContent = `
+            @keyframes sparkleFloat {
+                0% {
+                    transform: translateY(0) rotate(0deg);
+                    opacity: 1;
+                }
+                100% {
+                    transform: translateY(-100vh) rotate(360deg);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(sparkleStyle);
+
+        // Create sparkles periodically
+        setInterval(createSparkle, 2000);
+        
+        console.log('🎥 AI Video Buddy - Dark Theme Platform Loaded Successfully! 🌌');
     </script>
 </body>
-</html><!-- Force rebuild Tue Feb 10 17:36:29 UTC 2026 -->
+</html>
